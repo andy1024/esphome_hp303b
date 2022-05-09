@@ -5,7 +5,7 @@ An example of how to use this file is below:
 
 ```yaml
 esphome:
-  name: wemos-vindriktning
+  name: HP303Bsensor
   platform: ESP8266
   board: d1_mini
   libraries:
