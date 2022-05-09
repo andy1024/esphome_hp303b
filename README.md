@@ -29,3 +29,5 @@ sensor:
       unit_of_measurement: hPa
       accuracy_decimals: 1
 ```
+
+To use this esphome config you need to enable ssh keys for your git account
