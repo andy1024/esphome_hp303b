@@ -8,7 +8,7 @@ using namespace esphome;
 class HP303BSensor : public PollingComponent, public Sensor {
  public:
   LOLIN_HP303B hp;
-  int32_t pressure;
+  double pressure;
 
   HP303BSensor() : PollingComponent(100000) { }
 
@@ -24,7 +24,7 @@ class HP303BSensor : public PollingComponent, public Sensor {
 
   void update() override {
     hp.measurePressureOnce(pressure); // library returns value in in Pa, which equals 1/100 hPa
-    float hPa = pressure / 100.0;
+    double hPa = pressure / 100.0;
 
     ESP_LOGD(TAGhp, "Got pressure=%.1f hPa", hPa);
     publish_state(hPa); 
